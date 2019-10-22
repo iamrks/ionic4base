@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <ion-card padding-bottom>
+          <h4 text-center margin-top>Please login to continue...</h4>
+          <ion-card-content>
+            <form [formGroup]="login" (ngSubmit)="onSubmit()">
+              <ion-item>
+                <ion-label position="floating">Username</ion-label>
+                <ion-input type="text" formControlName="username"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input type="password" formControlName="password"></ion-input>
+              </ion-item>
+
+              <div text-center margin-top>
+                <ion-button type="submit" color="primary" [disabled]="!login.valid">Login</ion-button>
+                <ion-button type="button" color="secondary" [routerLink]="'/sign-up/'">SignUp</ion-button>
+              </div>
+            </form>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
